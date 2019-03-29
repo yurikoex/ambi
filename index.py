@@ -5,6 +5,7 @@ import json
 
 from flask import Flask, jsonify, request
 app = Flask(__name__)
+# app.run(host='0.0.0.0', port=5000, debug=True)
 
 pixel_pin = board.D18
  
@@ -32,3 +33,6 @@ def lights():
         print(index,val)
         pixels[index] = (val[0],val[1],val[2],val[3])
     return "OK"
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', debug=True)
